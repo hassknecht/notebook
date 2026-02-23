@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>悬浮笔记</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header>
+        <div class="title">悬浮笔记</div>
+        <div class="status" id="status">自动保存已开启</div>
+      </header>
+
+      <main>
+        <div class="editor-area">
+          <textarea
+            id="note"
+            placeholder="随手记点什么吧..."
+            spellcheck="false"
+          ></textarea>
+
+          <div class="clock-overlay" aria-label="罗马时钟">
+            <div class="clock" id="clock">
+              <span class="roman" style="--i: 0">XII</span>
+              <span class="roman" style="--i: 1">I</span>
+              <span class="roman" style="--i: 2">II</span>
+              <span class="roman" style="--i: 3">III</span>
+              <span class="roman" style="--i: 4">IV</span>
+              <span class="roman" style="--i: 5">V</span>
+              <span class="roman" style="--i: 6">VI</span>
+              <span class="roman" style="--i: 7">VII</span>
+              <span class="roman" style="--i: 8">VIII</span>
+              <span class="roman" style="--i: 9">IX</span>
+              <span class="roman" style="--i: 10">X</span>
+              <span class="roman" style="--i: 11">XI</span>
+              <div class="hand hour" id="hourHand"></div>
+              <div class="hand minute" id="minuteHand"></div>
+              <div class="hand second" id="secondHand"></div>
+              <div class="clock-center"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <label class="launch-at-login">
+          <input id="launchAtLogin" type="checkbox" />
+          开机启动
+        </label>
+        <span id="savedAt">未保存</span>
+      </footer>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>

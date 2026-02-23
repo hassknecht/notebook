@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #1f2530;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 15% 20%, #f7d9d9 0%, #d9e7ff 45%, #c5d7ff 100%);
+}
+
+.app-shell {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(20px) saturate(145%);
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+}
+
+header,
+footer,
+main {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+header {
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.status {
+  font-size: 12px;
+  color: #55637d;
+}
+
+main {
+  flex: 1;
+  padding: 12px;
+}
+
+.editor-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  resize: none;
+  font-size: 14px;
+  line-height: 1.6;
+  border-radius: 10px;
+  padding: 12px 12px 210px;
+  color: #1f2530;
+  background: rgba(255, 255, 255, 0.26);
+}
+
+textarea:focus {
+  outline: 2px solid rgba(96, 130, 191, 0.35);
+}
+
+.clock-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.clock {
+  --dial-size: 176px;
+  --dial-offset: calc((var(--dial-size) / 2) - 13px);
+  position: relative;
+  width: var(--dial-size);
+  height: var(--dial-size);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.26);
+  box-shadow: 0 10px 18px rgba(72, 89, 122, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.roman {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 13px;
+  color: #42506a;
+  line-height: 1;
+  transform:
+    translate(-50%, -50%)
+    rotate(calc(var(--i) * 30deg))
+    translateY(calc(-1 * var(--dial-offset)))
+    rotate(calc(var(--i) * -30deg));
+  transform-origin: center;
+  user-select: none;
+}
+
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 8px;
+}
+
+.hour {
+  width: 5px;
+  height: 42px;
+  background: #3d4c67;
+}
+
+.minute {
+  width: 4px;
+  height: 58px;
+  background: #59749a;
+}
+
+.second {
+  width: 2px;
+  height: 66px;
+  background: #d64d5f;
+}
+
+.clock-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: #55637d;
+}
+
+.launch-at-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.launch-at-login input {
+  accent-color: #6f8bb5;
+}
