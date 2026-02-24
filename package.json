@@ -1,50 +1,15 @@
 {
   "name": "floating-notes",
-  "productName": "Floating Notes",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "A local, always-on-top notes app with autosave.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "pack:win": "electron-builder --win portable nsis",
-    "pack:mac": "electron-builder --mac dmg",
-    "pack:linux": "electron-builder --linux AppImage",
-    "dist": "electron-builder"
+    "lint": "echo \"No lint configured\""
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^31.3.1",
-    "electron-builder": "^24.13.3"
-  },
-  "build": {
-    "appId": "com.floating.notes",
-    "files": [
-      "main.js",
-      "preload.js",
-      "renderer.js",
-      "index.html",
-      "styles.css",
-      "package.json"
-    ],
-    "directories": {
-      "output": "release"
-    },
-    "win": {
-      "target": [
-        "portable",
-        "nsis"
-      ]
-    },
-    "mac": {
-      "target": [
-        "dmg"
-      ]
-    },
-    "linux": {
-      "target": [
-        "AppImage"
-      ]
-    }
+    "electron": "^31.3.1"
   }
 }
